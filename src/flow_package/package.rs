@@ -6,7 +6,7 @@ use std::collections::HashMap;
 
 use crate::package_manager::PackageManager;
 
-#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Default)]
 pub struct Package {
     pub name: String,
     pub version: String,
