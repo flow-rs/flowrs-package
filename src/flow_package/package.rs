@@ -40,13 +40,13 @@ pub struct Module {
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Input {
     #[serde(rename = "type")]
-    input_type: TypeDescription,
+    pub input_type: TypeDescription,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Output {
     #[serde(rename = "type")]
-    output_type: TypeDescription,
+    pub output_type: TypeDescription,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
