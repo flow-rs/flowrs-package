@@ -681,7 +681,7 @@ mod tests {
         "MyType": {
             "inputs": null,
             "outputs": null,
-            "type_parameters": ["U", "T"],
+            "type_parameters": [{"name": "U", "where": []}, {"name": "T", "where": []}],
             "constructors":{
                 "New":{"NewWithObserver": {}},
                 "FromCode":{"FromCode":{"code_template": "let {{fully_qualified_name}}:{{type_parameter_U}} = 5;"}}
