@@ -50,10 +50,19 @@ pub struct Output {
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
+pub struct TypeParameter {
+    pub name: String,
+
+    // We only support trait constraints as is T::Default or T::Clone
+    #[serde(rename = "where")]
+    pub constraints: Vec<String>,
+}
+
+#[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Type {
     pub inputs: Option<HashMap<String, Input>>,
     pub outputs: Option<HashMap<String, Output>>,
-    pub type_parameters: Option<Vec<String>>,
+    pub type_parameters: Option<Vec<TypeParameter>>,
     pub constructors: HashMap<String, Constructor>,
 }
 
