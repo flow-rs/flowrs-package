@@ -170,6 +170,29 @@ pub struct Argument {
 }
 
 impl Argument {
+    pub fn new_change_observer_arg() -> Self {
+        Self {
+            arg_type: Box::new(TypeDescription::Type {
+                name: "()".to_string(),
+                type_parameters: None,
+            }),
+            name: "change_observer".to_string(),
+            passing: ArgumentPassing::Clone,
+            construction: ArgumentConstruction::ExistingObject(),
+        }
+    }
+
+    pub fn new_context_arg() -> Self {
+        Self {
+            arg_type: Box::new(TypeDescription::Type {
+                name: "()".to_string(),
+                type_parameters: None,
+            }),
+            name: "context".to_string(),
+            passing: ArgumentPassing::Clone,
+            construction: ArgumentConstruction::ExistingObject(),
+        }
+    }
     fn emit_prefix_code(&self) -> String {
         match self.passing {
             ArgumentPassing::Move => "".to_string(),
@@ -185,30 +208,6 @@ impl Argument {
             ArgumentPassing::Clone => ".clone()".to_string(),
             ArgumentPassing::MutableReference => "".to_string(),
             ArgumentPassing::Reference => "".to_string(),
-        }
-    }
-
-    fn new_change_observer_arg() -> Self {
-        Self {
-            arg_type: Box::new(TypeDescription::Type {
-                name: "()".to_string(),
-                type_parameters: None,
-            }),
-            name: "change_observer".to_string(),
-            passing: ArgumentPassing::Clone,
-            construction: ArgumentConstruction::ExistingObject(),
-        }
-    }
-
-    fn new_context_arg() -> Self {
-        Self {
-            arg_type: Box::new(TypeDescription::Type {
-                name: "()".to_string(),
-                type_parameters: None,
-            }),
-            name: "context".to_string(),
-            passing: ArgumentPassing::Clone,
-            construction: ArgumentConstruction::ExistingObject(),
         }
     }
 
