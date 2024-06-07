@@ -163,10 +163,10 @@ pub enum ArgumentConstruction {
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
 pub struct Argument {
     #[serde(rename = "type")]
-    arg_type: Box<TypeDescription>,
-    name: String,
-    passing: ArgumentPassing,
-    construction: ArgumentConstruction,
+    pub arg_type: Box<TypeDescription>,
+    pub name: String,
+    pub passing: ArgumentPassing,
+    pub construction: ArgumentConstruction,
 }
 
 impl Argument {
