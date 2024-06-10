@@ -128,7 +128,7 @@ impl ToString for Namespace {
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq)]
-enum ArgumentPassing {
+pub enum ArgumentPassing {
     Reference,
     MutableReference,
     Move,
