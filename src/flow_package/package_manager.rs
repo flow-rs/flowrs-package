@@ -10,7 +10,7 @@ pub struct PackageManager {
 impl PackageManager {
     pub fn new() -> Self {
         let mut pm = Self {
-            packages: HashMap::new(),
+            pub packages: HashMap::new(),
         };
 
         pm.add_built_in_package();
