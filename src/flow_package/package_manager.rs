@@ -4,13 +4,13 @@ use std::fs;
 use crate::package::{Crate, Package, Type};
 
 pub struct PackageManager {
-    pub(crate) packages: HashMap<String, Package>,
+    pub packages: HashMap<String, Package>,
 }
 
 impl PackageManager {
     pub fn new() -> Self {
         let mut pm = Self {
-            pub packages: HashMap::new(),
+            packages: HashMap::new(),
         };
 
         pm.add_built_in_package();
