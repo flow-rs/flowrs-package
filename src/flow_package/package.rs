@@ -102,6 +102,12 @@ impl Type {
     }
 }
 
+impl fmt::Display for Type {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        write!(f, "{:?}", self)
+    }
+}
+
 #[derive(Debug, Clone)]
 pub struct Namespace {
     parts: Vec<String>,
