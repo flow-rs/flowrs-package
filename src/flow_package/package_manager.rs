@@ -1,7 +1,8 @@
+use crate::package::package::Package;
+use crate::package::package_crate::Crate;
+use crate::package::package_type::Type;
 use std::collections::HashMap;
 use std::fs;
-
-use crate::package::{Crate, Package, Type};
 
 pub struct PackageManager {
     pub packages: HashMap<String, Package>,
