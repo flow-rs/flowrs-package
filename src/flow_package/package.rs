@@ -3,6 +3,7 @@ use serde::{Deserialize, Serialize};
 use anyhow::{Error, Result};
 use handlebars::Handlebars;
 use std::collections::HashMap;
+use std::fmt;
 
 use crate::package_manager::PackageManager;
 
