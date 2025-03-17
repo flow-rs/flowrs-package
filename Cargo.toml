@@ -16,7 +16,7 @@ create-type = ["cdylib", "rlib"]
 
 [dependencies]
 anyhow = "1.0.83"
-flowrs = {git = "https://github.com/flow-rs/flowrs", branch = "feature-project7"}
+flowrs = {git = "https://github.com/flow-rs/flowrs", branch = "mtMophima-exec"}
 handlebars = "5.1.2"
 serde = "1.0.201"
 serde_json = "1.0.117"

@@ -1,11 +1,11 @@
 use serde::{Deserialize, Serialize};
 
+use crate::package_manager::PackageManager;
 use anyhow::{Error, Result};
 use handlebars::Handlebars;
 use std::collections::HashMap;
 use std::fmt;
-
-use crate::package_manager::PackageManager;
+use std::str::FromStr;
 
 #[derive(Debug, Serialize, Deserialize, Clone, PartialEq, Default)]
 pub struct Package {
@@ -106,6 +106,14 @@ impl Type {
 impl fmt::Display for Type {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         write!(f, "{:?}", self)
+    }
+}
+
+impl FromStr for Type {
+    type Err = String;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        serde_json::from_str(s).map_err(|e| format!("Failed to parse Type: {}", e))
     }
 }
 
